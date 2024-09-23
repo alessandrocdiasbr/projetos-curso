@@ -58,16 +58,21 @@ function mostrarResumo() {
     document.getElementById('resumo-prato').textContent = `Prato: ${pratoSelecionadoTexto}`;
     document.getElementById('resumo-bebida').textContent = `Bebida: ${bebidaSelecionadaTexto}`;
     document.getElementById('resumo-sobremesa').textContent = `Sobremesa: ${sobremesaSelecionadaTexto}`;
+
+    const total = precoPrato + precoBebida + precoSobremesa;
+    document.getElementById('resumo-total').textContent = `TOTAL: ${total.toFixed(2)}`;
+
+    overlay.style.display = 'flex';
 }
 
 function fecharResumo() {
     const overlay = document.getElementById('resumo-overlay');
-    overlay.style.display = 'none'
+    overlay.style.display = 'none';
 }
 
 function confirmarPedido() {
-    
     resetarSelecoes();
+
     fecharResumo();
 }
 
