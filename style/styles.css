@@ -1,0 +1,249 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #eeeeee;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    background-color: #cf2b2b;
+    height: 92px;
+    width: 414px;
+    max-width: 414px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-family: "Righteous", sans-serif;
+    font-size: 44px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-left: 21px;
+}
+
+.logo-subtitulo {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 18px;
+    margin-left: 21px;
+}
+
+main {
+    margin-top: 92px;
+    margin-bottom: 92px;
+    width: 414px;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    margin-top: 27px;
+    display: flex;
+    flex-direction: column;
+}
+
+.opcoes-pratos,
+.opcoes-bebidas,
+.opcoes-sobremesas {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.titulo-pedido h2 {
+    font-family: "Righteous", sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: #000000;
+    margin-top: 10px;
+    margin-left: 19px;
+}
+
+button.opcao {
+    width: 172px;
+    height: 216px;
+    background-color: #ffffff;
+    margin: 16px;
+    border: 5px solid #ffffff;
+    cursor: pointer;
+    text-align: justify;
+    border-radius: 9px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+button.opcao img {
+    width: 144px;
+    height: 87px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+button.opcao .titulo-item {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 4px;
+}
+
+button.opcao .descricao-item {
+    font-size: 15px;
+    font-weight: 300;
+    color: #a6a6a6;
+    margin-bottom: 10px;
+}
+
+button.opcao .preco-item {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+}
+
+button.opcao.selecionado {
+    border: 5px solid #32b72f;
+}
+
+#fechar-pedido {
+    background-color: #cbcbcb;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    display: block;
+    margin: 20px auto;
+    border-radius: 50px;
+    width: 364px;
+    max-width: 364px;
+    height: 61px;
+    transition: background-color 0.3s;
+}
+
+#fechar-pedido.ativo {
+    background-color: #32b72f;
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee67;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    padding: 10px;
+}
+
+.resumo {
+    background-color: #50d074;
+    border-radius: 9px;
+    width: 377px;
+    max-width: 377px;
+    height: 353px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.resumo h2 {
+    margin-bottom: 20px;
+    margin-top: 21px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.resumo p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.resumo strong {
+    font-size: 18px;
+}
+
+.acoes {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.acoes button,
+.acoes a {
+    width: 329px;
+    height: 52px;
+    font-size: 16px;
+    border: none;
+    border-radius: 100px;
+    text-align: center;
+}
+
+.acoes button {
+    background-color: #ffffff;
+    color: #50d074;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.acoes a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+}
+
+#resumo-prato,
+#resumo-bebida,
+#resumo-sobremesa,
+#resumo-total {
+    color: #ffffff;
+}
+
+#resumo-total {
+    font-weight: 700;
+}
+
+footer {
+    background-color: #ffffff;
+    width: 414px;
+    max-width: 414px;
+    height: 92px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer > button {
+    background-color: #cbcbcb;
+    height: 61px;
+    width: 364px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #ffffff;
+    border: none;
+}

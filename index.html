@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>Driven Eats</title>
+</head>
+<body>
+    <header> <!--Como se trata de um barra fixa, optei por utilizar o header e footer, coomo havia feito no projeto instagran-->
+        <h1 class="logo">Driven Eats</h1>
+        <p class="logo-subtitulo">Seu pedido em 6 minutos</p>
+    </header>
+
+    <main>
+        <div class="container"> <!-- Após separar a estrutura básica do meu código em tres componentes (header, main e footer) resolvi colocar uma div.container para fazer com que somente essa parte fosse scrolavel no site-->
+            <section id="pratos" class="prato-escolhido">
+                <div class="titulo-pedido">
+                    <h2>Primeiro, seu prato</h2>
+                </div>
+                <div class="opcoes-pratos ">
+                    <button class="opcao" data-preco="25.00" onclick="selecionarPrato(this)"> <!--Neste botão, optei por colocar o atributo data-, pois havia visto que era uma boa técnica para usar na função resumo-->
+                        <img src="img/pf_frango.jpg" alt="prato contendo folhas de alface, file de frango, tomate, farofa, arroz e feijão.">
+                        <h3 class="titulo-item">Frango Yin Yang </h3>
+                        <h4 class="descricao-item">Acompanha salada, arroz, feijão e farofa</h4>
+                        <p class="preco-item">25.00</p>
+                    </button>
+                    <button class="opcao" data-preco="30.00" onclick="selecionarPrato(this)">
+                        <img src="img/pf_calabresa.png" alt="prato contendo linguiça calabresa cortada em fatias com pedaços de cebola, fritas, arroz e feijão.">
+                        <h3 class="titulo-item">PF Calabresa </h3>
+                        <h4 class="descricao-item">Acompanha arroz, feijão e fritas</h4>
+                        <p class="preco-item">30.00</p>
+                    </button>
+                    <button class="opcao" data-preco="20.00" onclick="selecionarPrato(this)">
+                        <img src="img/pf_carne.jpg" alt="prato contendo bife de boi, alface, tomate, fritas, arroz, feijão e ovo frito">
+                        <h3 class="titulo-item">PF Boi</h3>
+                        <h4 class="descricao-item">Acompanha arroz, feijão, salada e ovo</h4>
+                        <p class="preco-item">20.00</p>
+                    </button>
+                </div>
+            </section>
+
+            <section id="bebidas" class="bebida-escolhida">
+                <div class="titulo-pedido">
+                    <h2>Agora, sua bebida</h2>
+                </div>
+                <div class="opcoes-bebidas">
+                    <button class="opcao" data-preco="4.90" onclick="selecionarBebida(this)">
+                        <img src="img/coca.png" alt="lata de coca-cola vermelha de 350 ml">
+                        <h3 class="titulo-item">Coquinha gelada</h3>
+                        <h4 class="descricao-item">Lata 350 ml</h4>
+                        <p class="preco-item">4.90</p>
+                    </button>
+                    <button class="opcao" data-preco="4.70" onclick="selecionarBebida(this)">
+                        <img src="img/fanta.png" alt="lata de fanta laranja de 350 ml">
+                        <h3 class="titulo-item">Fanta Laranja</h3>
+                        <h4 class="descricao-item">Lata 350 ml</h4>
+                        <p class="preco-item">4.70</p>
+                    </button>
+                    <button class="opcao" data-preco="8.00" onclick="selecionarBebida(this)">
+                        <img src="img/suco.png" alt="copo contendo suco de laranja, duas laranjas sendo uma delas cortada ao meio">
+                        <h3 class="titulo-item">Suco de Laranja</h3>
+                        <h4 class="descricao-item">Jarra de 500 ml</h4>
+                        <p class="preco-item">8.00</p>
+                    </button>
+                </div>
+            </section>
+
+            <section id="sobremesas" class="sobremesa-escolhida">
+                <div class="titulo-pedido">
+                    <h2>Por fim, sua sobremesa</h2>
+                </div>
+                <div class="opcoes-sobremesas ">
+                    <button class="opcao" data-preco="8.00" onclick="selecionarSobremesa(this)">
+                        <img src="img/brownie.jpg" alt="pedaço de brownie de chocolate (especie de bolo achatado), coberto com ganache de chocolate">
+                        <h3 class="titulo-item">Brownie</h3>
+                        <h4 class="descricao-item">Sabor chocolate</h4>
+                        <p class="preco-item">8.00</p>
+                    </button>
+                    <button class="opcao" data-preco="9.00" onclick="selecionarSobremesa(this)">
+                        <img src="img/pudim.jpg" alt="pudim de leite condensado inteiro em um prato com calda de caramelo">
+                        <h3 class="titulo-item">Pudim</h3>
+                        <h4 class="descricao-item">Leite condensado</h4>
+                        <p class="preco-item">9.00</p>
+                    </button>
+                    <button class="opcao" data-preco="7.00" onclick="selecionarSobremesa(this)">
+                        <img src="img/mouse.jpg" alt="mouse de maracuja em um pequeno pote, com dois maracujas sendo um deles aberto">
+                        <h3 class="titulo-item">Mousse</h3>
+                        <h4 class="descricao-item">Sabor maracuja</h4>
+                        <p class="preco-item">7.00</p>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <button id="fechar-pedido" disabled onclick="mostrarResumo()">Selecione os 3 itens <br> para fechar o pedido</button>
+
+        <div class="overlay" id="resumo-overlay" style="display: none;"> <!--Optei por usar a função style nessa parte, eu sei que não é a mais indicada, mas não consegui fazer funcionar com css, como deu certo desse jeito, eu não mexi mais no código.-->
+            <div class="resumo">
+                <h2>Confirme seu pedido</h2>
+                <p id="resumo-prato"></p>
+                <p id="resumo-bebida"></p>
+                <p id="resumo-sobremesa"></p>
+
+                <p><strong><span id="resumo-total"></span></strong></p> <!--usei o strong e span para deixar o texto com mais destaque, acho que foi meio redundante, mas como gostei do resultado eu deixei-->
+
+                <div class="acoes">
+                    <button onclick="confirmarPedido()">Tudo certo, pode pedir!</button>
+                    <a href="#" onclick="fecharResumo()">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="javascript/script.js"></script>
+</body>
+</html>
