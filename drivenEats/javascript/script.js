@@ -79,10 +79,10 @@ function confirmarPedido() {
 function confirmarPedido() {
     const whatsappNumber = "5531997736049";
 
-    const mensagem = `Olá, gostaria de fazer o seguinte pedido: \n\n` +
-                    `${pratoSelecionadoTexto}\n` +
-                    `${bebidaSelecionadaTexto}\n` +
-                    `${sobremesaSelecionadaTexto}\n\n` + 
+    const mensagem = `Olá, gostaria de fazer o pedido: \n\n` +
+                    `${pratoSelecionadoTexto}\n-` +
+                    `${bebidaSelecionadaTexto}\n-` +
+                    `${sobremesaSelecionadaTexto}\n\n-` + 
                     `Total: R$ ${ (precoPrato + precoBebida + precoSobremesa).toFixed(2) }`;
 
     const mensagemCodificada = encodeURIComponent(mensagem);
