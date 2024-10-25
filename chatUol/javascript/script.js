@@ -138,3 +138,22 @@ function loadParticipants() {
         })
         .catch(error => console.error("Erro ao carregar participantes!", error));
 }
+
+//Seleção de receptor
+function selectRecipient(name) {
+    currentRecipient = name;
+    
+    document.querySelectorAll('.contact-option').forEach(option => {
+        option.classList.remove('selected');
+    });
+    
+    event.currentTarget.classList.add('selected');
+    updateMessageStatus();
+}
+
+//Atualização de mensagem
+function updateMessageStatus() {
+    const visibility = currentMessageType === 'public' ? 'público' : 'reservadamente';
+    document.getElementById("recipient-test").textContent = 
+        `Enviando para ${currentRecipient} (${visibility})`;
+}
