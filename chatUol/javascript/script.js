@@ -170,3 +170,22 @@ function setMessageType(type) {
     updateMessageStatus();
     closePanel();
 }
+
+//Altera exibição do painel
+function toggleParticipantsPanel() {
+    const panel = document.getElementById('participants-panel');
+    const existingOverlay = document.querySelector('.panel-overlay');
+    
+    if (!panel.classList.contains('show')) {
+        if (!existingOverlay) {
+            const overlay = document.createElement('div');
+            overlay.className = 'panel-overlay';
+            overlay.addEventListener('click', closePanel);
+            document.body.appendChild(overlay);
+            setTimeout(() => overlay.classList.add('show'), 0);
+        }
+        panel.classList.add('show');
+    } else {
+        closePanel();
+    }
+}
