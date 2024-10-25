@@ -229,3 +229,9 @@ function startChat() {
     setInterval(notifyPresent, 5000);
     setInterval(loadParticipants, 10000);
 }
+
+//Inicializa a página ao carregar
+document.addEventListener('DOMContentLoaded', function() {
+    initializePanelEventListeners();
+    enterChat();
+});
