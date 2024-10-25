@@ -157,3 +157,16 @@ function updateMessageStatus() {
     document.getElementById("recipient-test").textContent = 
         `Enviando para ${currentRecipient} (${visibility})`;
 }
+
+//Definição do tipo de mensagem
+function setMessageType(type) {
+    currentMessageType = type;
+    
+    document.querySelectorAll('.visibility-option').forEach(option => {
+        option.classList.remove('selected');
+    });
+    
+    event.currentTarget.classList.add('selected');
+    updateMessageStatus();
+    closePanel();
+}
