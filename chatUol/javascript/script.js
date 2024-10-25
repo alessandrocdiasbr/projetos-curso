@@ -108,3 +108,33 @@ function sendMessage() {
     })
     .catch(error => console.error("Erro ao enviar mensagem!", error));
 }
+
+//Carregando lista de participantes
+function loadParticipants() {
+    fetch(`https://mock-api.driven.com.br/api/v6/uol/participants/${UUID}`)
+        .then(response => response.json())
+        .then(data => {
+            let participantList = document.getElementById("participants");
+            participantList.innerHTML = "";
+
+            data.forEach(participant => {
+                let li = document.createElement("li");
+                li.className = "contact-option";
+                if (participant.name === recipient) {
+                    li.classList.add('selected');
+                }
+                
+                li.innerHTML = `
+                    <div class="contact-info">
+                        <ion-icon name="person-circle"></ion-icon>
+                        <span>${participant.name}</span>
+                    </div>
+                    <ion-icon name="checkmark-sharp" class="check-icon"></ion-icon>
+                `;
+                
+                li.onclick = () => selectRecipient(participant.name);
+                participantList.appendChild(li);
+            });
+        })
+        .catch(error => console.error("Erro ao carregar participantes!", error));
+}
