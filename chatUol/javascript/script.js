@@ -203,3 +203,19 @@ function closePanel() {
         }
     }
 }
+
+//Inicializa escutador do painel
+function initializePanelEventListeners() {
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closePanel();
+        }
+    });
+
+    const panel = document.getElementById('participants-panel');
+    if (panel) {
+        panel.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+    }
+}
