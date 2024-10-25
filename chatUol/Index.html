@@ -25,6 +25,40 @@
     <main>
         <div class="container" id="messages"></div>
     </main>
+
+    <div class="participants-panel" id="participants-panel">
+        <div class="contact-message">
+            <h2>Escolha um contato para enviar mensagem:</h2>
+            <div class="contact-option" onclick="selectRecipient('Todos')">
+                <div class="contact-info">
+                    <ion-icon name="people-sharp"></ion-icon>
+                    <span>Todos</span>
+                </div>
+                <ion-icon name="checkmark-sharp" class="check-icon"></ion-icon>
+            </div>
+            <ul id="participants">
+            </ul>
+        </div>
+        <div class="contact-visibily">
+            <h2>Escolha a visibilidade</h2>
+            <div class="visibility-option" onclick="setMessageType('public')">
+                <div class="visibility-info">
+                    <ion-icon name="lock-open-sharp"></ion-icon>
+                    <span>Público</span>
+                </div>
+                <ion-icon name="checkmark-sharp" class="check-icon"></ion-icon>
+            </div>
+            <div class="visibility-option" onclick="setMessageType('private')">
+                <div class="visibility-info">
+                    <ion-icon name="lock-closed-sharp"></ion-icon>
+                    <span>Reservadamente</span>
+                </div>
+                <ion-icon name="checkmark-sharp" class="check-icon"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+
     
 
     <script src="javascript/script.js"></script>
