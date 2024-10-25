@@ -24,3 +24,41 @@ function enterChat() {
     .catch(error => console.log('Erro ao entrar na sala', error));
 }
 
+//Manutenção de usuário ativo 
+function notifyPresent() {
+    fetch(`https://mock-api.driven.com.br/api/v6/uol/status/${UUID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: username })
+    })
+    .then(response => {
+        if (response.status !== 200) {
+            alert("Você foi desconectado. A página será recarregada!");
+            location.reload();
+        }
+    })
+    .catch(error => console.error("Erro ao notificar presença", error));
+}
+
+//Carregando mensagens do servidor
+function loadMessages() {
+    fetch(`https://mock-api.driven.com.br/api/v6/uol/messages/${UUID}`)
+    .then(response => response.json())
+    .then(data => {
+        let chatWindow = document.getElementById("messages");
+        chatWindow.innerHTML = "";
+
+        data.forEach(message => {
+            if (message.type === "private_message" && (message.from === username || message.to === username)) {
+                displayMessage(message, "private");
+            } else if (message.type !== "private_message") {
+                const className = message.type === "status" ? "status" : "normal";
+                displayMessage(message, className);
+            }
+        });
+
+        chatWindow.scrollTop = chatWindow.scrollHeight; 
+    })
+    .catch(error => console.error("Erro ao carregar mensagens", error));
+}
+
