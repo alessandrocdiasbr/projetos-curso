@@ -62,3 +62,20 @@ function loadMessages() {
     .catch(error => console.error("Erro ao carregar mensagens", error));
 }
 
+//Cores das mensagens do chat
+function displayMessage(message, className) {
+    const msgDiv = document.createElement("div");
+    msgDiv.classList.add("message", className);
+
+    let messageText = '';
+    if (message.type === 'private_message') {
+        messageText = `<strong>${message.from}</strong> reservadamente para <strong>${message.to}</strong>: ${message.text}`;
+    } else if (message.type === 'status') {
+        messageText = `<strong>${message.from}</strong> ${message.text}`;
+    } else {
+        messageText = `<strong>${message.from}</strong> para <strong>${message.to}</strong>: ${message.text}`;
+    }
+
+    msgDiv.innerHTML = `${message.time} ${messageText}`;
+    document.getElementById("messages").appendChild(msgDiv);
+}
