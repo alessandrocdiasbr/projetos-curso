@@ -79,3 +79,32 @@ function displayMessage(message, className) {
     msgDiv.innerHTML = `${message.time} ${messageText}`;
     document.getElementById("messages").appendChild(msgDiv);
 }
+
+//Enviando mensagem
+function sendMessage() {
+    const messageInput = document.getElementById("messageInput").value;
+    if (!messageInput) return;
+
+    const message = {
+        from: username,
+        to: currentRecipient === "Todos" ? "Todos" : currentRecipient, 
+        text: messageInput,
+        type: currentMessageType === 'public' ? "message" : "private_message" 
+    };
+
+    fetch(`https://mock-api.driven.com.br/api/v6/uol/messages/${UUID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(message)
+    })
+    .then(response => {
+        if (response.status === 200) {
+            document.getElementById("messageInput").value = "";
+            loadMessages();
+        } else {
+            alert("Erro ao enviar mensagem. Página será recarregada!");
+            location.reload();
+        }
+    })
+    .catch(error => console.error("Erro ao enviar mensagem!", error));
+}
