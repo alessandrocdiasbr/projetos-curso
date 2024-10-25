@@ -1,0 +1,31 @@
+/*Estilos header*/
+header {
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 4;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .image img {
+    margin-left: 20px;
+    width: 73px;
+    height: 53px;
+}
+
+.header .icon button {
+    font-size: 45px;
+    margin-right: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
