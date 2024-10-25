@@ -189,3 +189,17 @@ function toggleParticipantsPanel() {
         closePanel();
     }
 }
+
+//Fecha painel de participantes
+function closePanel() {
+    const panel = document.getElementById('participants-panel');
+    const overlay = document.querySelector('.panel-overlay');
+    
+    if (panel.classList.contains('show')) {
+        panel.classList.remove('show');
+        if (overlay) {
+            overlay.classList.remove('show');
+            setTimeout(() => overlay.remove(), 300);
+        }
+    }
+}
