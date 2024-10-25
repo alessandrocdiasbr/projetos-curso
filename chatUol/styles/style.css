@@ -29,3 +29,276 @@ header {
     background: none;
     cursor: pointer;
 }
+
+/*Painel de opções*/
+
+.option-chat {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 3;
+}
+
+.option-chat .contact-message,
+.option-chat .contact-visibily {
+    background-color: #fff;
+    width: 70%; 
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    position: fixed;
+    right: 0; 
+    top: 0;
+}
+
+.participants-panel {
+    position: fixed;
+    top: 0;
+    right: -70%;
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    transition: right 0.3s ease;
+    z-index: 5;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.participants-panel.show {
+    right: 0; 
+}
+
+.panel-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 4;
+    cursor: pointer; 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.panel-overlay.show {
+    display: block;
+    opacity: 1;
+}
+
+.contact-option, .visibility-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.contact-info, .visibility-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.check-icon {
+    color: #28BB25;
+    display: none;
+}
+
+.selected .check-icon {
+    display: block;
+}
+
+.option-chat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+/*Mensagens*/
+.container {
+    background: #f3f3f3;
+    padding: 20px;
+    margin-top: 80px; 
+    margin-bottom: 80px; 
+    overflow-y: auto;
+    height: calc(100vh - 160px); 
+}
+
+.message strong {
+    font-weight: bold;
+}
+
+.participants-panel .contact-message {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
+
+.participants-panel .contact-message h2 {
+    margin-top: 30px;
+    margin-bottom: 45px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.participants-panel .contact-message a {
+    text-align: start;
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.participants-panel .contact-message ul {
+    margin-left: 20px;
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.participants-panel .contact-visibily h2 {
+    margin-top: 30px;
+    margin-bottom: 45px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.participants-panel .contact-visibily a {
+    text-align: start;
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+/*Link de partipantes*/
+.option-chat a {
+    display: block;
+    margin: 10px 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.option-chat a ion-icon {
+    margin-right: 8px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message.normal {
+    background-color: #FFFFFF; 
+}
+
+.message.status {
+    background-color: #DCDCDC; 
+}
+
+.message.private {
+    background-color: #ffdede; 
+    color: #000; 
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/*Footer*/
+footer {
+    height: 80px;
+    background: #fff;
+    box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 4;
+}
+
+footer .box-message {
+    width: 95%;
+    display: flex;
+    margin: 0 auto;
+}
+
+footer .box-message .message-input {
+    width: 90%;
+}
+
+footer .box-message .message-input input {
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 40px;
+    width: 90%;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    font-style: italic;
+    font-weight: 400;
+    color: black;
+}
+
+footer .box-message .message-input input:focus {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+footer .box-message .message-input p {
+    font-size: 15px;
+    margin-left: 20px;
+    color: #979494;
+}
+
+footer .box-message button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+footer .box-message .icon-footer {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .box-message .icon-footer ion-icon {
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+/*Ajustes para todas as telas*/
+@media (max-width: 600px) {
+    footer .box-message .message-input input {
+        width: 80%; 
+    }
+
+    footer .box-message .icon-footer {
+        width: 15%; 
+    }
+}
+
