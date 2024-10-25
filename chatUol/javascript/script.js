@@ -219,3 +219,13 @@ function initializePanelEventListeners() {
         });
     }
 }
+
+//Inicia o chat e define os intervalos
+function startChat() {
+    loadMessages();
+    loadParticipants();
+
+    setInterval(loadMessages, 3000);
+    setInterval(notifyPresent, 5000);
+    setInterval(loadParticipants, 10000);
+}
